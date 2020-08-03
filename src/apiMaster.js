@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = '//18.224.200.47';
+const url = 'http://18.224.200.47';
 
 const getProductList = () => {
   return axios.get(`${url}/products`);
@@ -63,8 +63,8 @@ const getCart = (userToken) => {
 };
 
 const addToCart = (user_token, sku_id) => {
-  console.log(user_token);
-  console.log(sku_id);
+  // console.log(user_token);
+  // console.log(sku_id);
   return axios.post(`${url}/cart/`, {
     user_token: user_token,
     sku_id: sku_id,

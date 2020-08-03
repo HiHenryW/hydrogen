@@ -1,10 +1,10 @@
-import React from "react";
-import Stars from "./stars.js";
-import UploadPhotos from "./uploadPhotos.js";
-import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
-import { charScales, ratingScale } from "./constants.js";
-import apiMaster from "../.././apiMaster.js";
+import React from 'react';
+import Stars from './stars.js';
+import UploadPhotos from './uploadPhotos.js';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import { charScales, ratingScale } from './constants.js';
+import apiMaster from '../.././apiMaster.js';
 
 class NewReview extends React.Component {
   constructor(props) {
@@ -14,11 +14,11 @@ class NewReview extends React.Component {
       rating: 0,
       recommend: true,
       characteristics: {},
-      summary: "",
-      body: "",
+      summary: '',
+      body: '',
       photos: [],
-      name: "",
-      email: "",
+      name: '',
+      email: '',
       showImgModal: false,
       validated: false,
     };
@@ -68,7 +68,7 @@ class NewReview extends React.Component {
           characteristics
         )
         .then(({ data }) => {
-          console.log("the review was posted successfully!", data);
+          // console.log("the review was posted successfully!", data);
         })
         .catch((err) => {
           console.error(err);
@@ -78,7 +78,7 @@ class NewReview extends React.Component {
 
   handleChange(e) {
     let temp = {};
-    if (e.target.name === "recommend") {
+    if (e.target.name === 'recommend') {
       temp[e.target.name] = !!e.target.value;
     } else {
       temp[e.target.name] = e.target.value;
@@ -107,7 +107,7 @@ class NewReview extends React.Component {
           photos: images,
         },
         () => {
-          console.log(this.state.photos);
+          // console.log(this.state.photos);
         }
       );
     }
@@ -191,7 +191,7 @@ class NewReview extends React.Component {
                         key={this.props.currentProductCharacteristics[char].id}
                       >
                         <Form.Label>{char}</Form.Label> <br />
-                        {["1", "2", "3", "4", "5"].map((item, i) => {
+                        {['1', '2', '3', '4', '5'].map((item, i) => {
                           return (
                             <Form.Check key={i}>
                               <Form.Check.Input
@@ -217,7 +217,7 @@ class NewReview extends React.Component {
                       </div>
                     );
                   }
-                )}{" "}
+                )}{' '}
               </Form.Group>
               <Form.Group controlId="reviewSummary">
                 <Form.Label>* Review Summary</Form.Label>
@@ -257,7 +257,7 @@ class NewReview extends React.Component {
                       ? `Minimum required characters left: ${
                           50 - Number(this.state.body.length)
                         }`
-                      : "Minimum reached"}
+                      : 'Minimum reached'}
                   </small>
                 </Form.Text>
                 <Form.Control.Feedback type="invalid">

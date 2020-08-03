@@ -94,7 +94,7 @@ class YourOutfit extends React.Component {
   }
 
   getCardImages() {
-    console.log('getCardImages ran!');
+    // console.log('getCardImages ran!');
     let promises = [];
     for (let i = 0; i < this.state.favoriteOutfits.length; i++) {
       promises.push(
@@ -121,7 +121,7 @@ class YourOutfit extends React.Component {
   }
 
   getCardPrices() {
-    console.log('getCardPrices ran!');
+    // console.log('getCardPrices ran!');
     let promises = [];
     for (let i = 0; i < this.state.favoriteOutfits.length; i++) {
       promises.push(
