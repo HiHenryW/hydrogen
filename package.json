@@ -11,8 +11,8 @@
     "build-dev": "webpack -d --mode development",
     "build-prod": "webpack -p --mode production",
     "start-dev": "webpack-dev-server --hot --mode development",
-    "start": "nodemon server.js",
-    "test": "jest --coverage"
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -d"
   },
   "dependencies": {
     "axios": "^0.19.2",
